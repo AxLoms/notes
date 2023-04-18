@@ -1,0 +1,14 @@
+{% extends 'tinder.html'%}
+{% load static %}
+{% block title%} Note {% endblock %}
+
+{% block body %}
+{%if user.is_authenticated %}
+    <a href="/exit"><button>Выйти</button></a>
+{% else %}
+
+<a href="/registration"><button>Регестрация</button></a>
+<a href="/login"><button>войти в свой аккаунт</button></a>
+
+{% endif %}
+{% endblock %}

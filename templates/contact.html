@@ -1,0 +1,12 @@
+{% extends 'tinder.html'%}
+{% load static %}
+{% block title%} Note {% endblock %}
+
+{% block body %}
+
+    {% for contact in number %}
+        <p>Номер телефона: {{contact.telephone}}</p>
+        <p>Почта: {{contact.mail}}</p>
+    {% endfor %}
+
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'tinder.html'%}
+{% load static %}
+{% block title%} Note {% endblock %}
+
+{% block body %}
+
+<div class="todo-list">
+    <h2>Твой мой список дел</h2>
+    <p>{{user}}</p>
+    {%for note in notes %}
+        <h3>{{note.name}}</h3>
+        <p>{{note.description}}</p>
+        <a href="/delit_notes/{{note.id}}"><button class="batton_delite">Удалить</button></a>
+        
+    {%endfor%}
+<form action="form_notes">
+    <fieldset>
+        <input class="input_notes" name="name" type="text" placeholder="Название:">
+        <br>
+        <input class="input_notes" name="description" type="text" placeholder="Описание:">
+        <br>
+        <button class="batton" type="submit">Добавить</button>
+    </fieldset>
+
+    
+</form>        
+    
+</div>       
+{% endblock %}

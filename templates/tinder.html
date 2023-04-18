@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    
+    <title>Notes</title>
+</head>
+<body>
+    <header>
+       
+            <h2  class="logo">Notes</h2>
+       
+        <nav>
+            <ul>
+                <li><a href="helpa">Помощь</a></li>
+                <li><a href="description">Описание</a></li>          
+                  <button><a href="profile"> Личный кабинет</a></button> 
+                  <button><a href="notes">Списки</a></button>               
+            </ul>
+        </nav>
+    
+        
+    </header>
+    {% block body %}{% endblock %}
+</body>
+</html>

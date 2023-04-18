@@ -1,0 +1,23 @@
+{% extends 'tinder.html' %}
+{% load static %}
+{% block title%} Note {% endblock %}
+
+{% block body %}
+<form class="login-form" action="form_auhtorization" method="POST">
+    {% csrf_token %}
+
+    <fieldset>
+        <legend>Вход в аккаунт</legend>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input name="email" class="form-input" type="text" id="email" placeholder="Введите почту">
+        </div>
+        <div class="form-group">
+            <label for="password">Пароль:</label>
+            <input name="password" class="form-input" type="password" id="password" placeholder="Введите пароль"> 
+        </div>
+    </fieldset>
+    <p>{{error}}</p>
+    <button type="submit" class="btn btn-primary">Отправить</button>
+</form>
+{% endblock %}

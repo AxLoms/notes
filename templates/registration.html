@@ -1,0 +1,37 @@
+
+
+{% extends 'tinder.html' %}
+
+{% block title %} Регистрация {% endblock %}
+
+{% block body %}
+
+<div class="registration">
+
+  <h2>Регистрация</h2>
+
+  <form action="/process_registration" method="POST">
+
+    {% csrf_token %}
+
+    <div class="form-group">
+      <label for="name">ФИО</label>
+      <input name="name" class="form-control" type="text" id="name" placeholder="Введите ФИО" required>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input name="email" class="form-control" type="email" id="email" placeholder="Введите почту" required>
+    </div>
+
+    <div class="form-group">
+      <label for="password">Пароль</label>
+      <input name="password" class="form-control" type="password" id="password" placeholder="Введите пароль" required>
+    </div>
+    <p>{{error}}</p>
+    <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
+
+  </form>
+
+</div>
+{% endblock %}

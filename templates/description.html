@@ -1,0 +1,13 @@
+{% extends 'tinder.html'%}
+{% load static %}
+{% block title%} Note {% endblock %}
+
+{% block body %}
+    <h1> Информация о  обо мне :</h1>
+    <p>Мне зовут {{name}} я {{gender}} мне {{age}} живу я {{city}} </p>
+     <p>Мои увлечение </p>
+        {% for hobby in hobbies %}
+            <p>{{hobby}}</p>
+        {% endfor %}
+        
+{% endblock %}            
